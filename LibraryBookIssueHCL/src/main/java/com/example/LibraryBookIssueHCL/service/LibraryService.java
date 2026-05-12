@@ -45,6 +45,10 @@ public class LibraryService {
         return memberRepository.save(member);
     }
 
+    public List<Member> getAllMembers() {
+        return memberRepository.findAll();
+    }
+
     public Member getMemberById(Long id) {
         return memberRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Member not found with ID: " + id));
